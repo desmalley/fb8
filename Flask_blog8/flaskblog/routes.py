@@ -161,7 +161,7 @@ def bid(item_id):
 
         if int(form.bid.data) > bucks:
             flash(f"Sorry, you only have {bucks} bucks--not enough to make that bid.", 'danger')
-            return redirect(url_for('bid'))
+            return redirect(url_for('bid', item_id=item_id))
 
         if int(form.bid.data) > bid_amt:
             flash('Your bid has been recorded. You are the highest bidder!', 'success')
